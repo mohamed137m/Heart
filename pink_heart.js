@@ -1,5 +1,13 @@
 const canvas = document.getElementById("pinkboard");
 const ctx = canvas.getContext("2d");
+
+// تحديث حجم الـ canvas عند تغيير حجم النافذة
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    updateParticleSettings(); // تحديث إعدادات الجزيئات عند تغيير حجم الشاشة
+});
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -16,6 +24,13 @@ const settings = {
         spiralIntensity: 0.1,
     },
 };
+
+// تحديث إعدادات الجزيئات بناءً على حجم الشاشة
+function updateParticleSettings() {
+    settings.particles.length = window.innerWidth > 600 ? 1500 : 800;
+    settings.particles.maxSize = window.innerWidth > 600 ? 6 : 3;
+    settings.particles.minSize = window.innerWidth > 600 ? 2 : 1.5;
+}
 
 // معادلة لرسم شكل القلب
 function getHeartCoordinates(angle) {
