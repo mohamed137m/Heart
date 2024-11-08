@@ -25,7 +25,7 @@
         .love-text {
             position: absolute;
             text-align: center;
-            font-size: 3em;
+            font-size: 2em; /* تم تقليل الحجم هنا */
             color: pink;
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
@@ -42,19 +42,19 @@
         /* تخصيص الخط وحجمه بناءً على حجم الشاشة */
         @media (max-width: 600px) {
             .love-text {
-                font-size: 1.5em;
+                font-size: 1.2em; /* تم تصغير الحجم أكثر للأجهزة المحمولة */
             }
         }
 
         @media (min-width: 600px) and (max-width: 1024px) {
             .love-text {
-                font-size: 2em;
+                font-size: 1.8em; /* حجم أكبر قليلًا للأجهزة المتوسطة */
             }
         }
 
         @media (min-width: 1024px) {
             .love-text {
-                font-size: 3em;
+                font-size: 2.5em; /* الحجم العادي للأجهزة الكبيرة */
             }
         }
 
@@ -82,7 +82,7 @@
         const particles = [];
         const settings = {
             particles: {
-                length: window.innerWidth > 600 ? 1500 : 800, // تقليل عدد الجسيمات على الشاشات الصغيرة
+                length: window.innerWidth > 600 ? 1000 : 600, // تقليل عدد الجسيمات على الشاشات الصغيرة
                 maxSize: window.innerWidth > 600 ? 6 : 3,     // تصغير حجم الجسيمات على الشاشات الصغيرة
                 minSize: window.innerWidth > 600 ? 2 : 1.5,
                 colors: ["rgba(255,105,180,0.9)", "rgba(255,182,193,0.7)", "rgba(255,20,147,0.5)"],
@@ -95,7 +95,7 @@
 
         // معادلة لرسم شكل القلب مع تقليل الحجم
         function getHeartCoordinates(angle) {
-            const scale = 12; // تقليل الحجم ليظهر القلب أصغر
+            const scale = 9; // تقليل الحجم ليظهر القلب أصغر من قبل
             const x = scale * (16 * Math.pow(Math.sin(angle), 3));
             const y = -scale * (13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 * Math.cos(3 * angle) - Math.cos(4 * angle));
             return { x, y };
