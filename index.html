@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Shape with Particles</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .love-text {
+    position: absolute;
+    text-align: center;
+    font-size: 3em;
+    color: pink;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    animation: fadeInOut 3s ease-in-out infinite;
+    letter-spacing: 2px;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+.love-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: pink;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    animation: fadeInOut 3s ease-in-out infinite;
+    letter-spacing: 2px;
+    pointer-events: none; /* لمنع التفاعل مع النص */
+}
+canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+        canvas {
+            display: block;
+        }
+
+        /* حجم كبير لشاشات الكمبيوتر */
+@media (min-width: 1024px) {
+    .love-text {
+        font-size: 3em;
+    }
+}
+
+/* حجم متوسط لشاشات التابلت */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .love-text {
+        font-size: 2em;
+    }
+}
+
+/* حجم صغير لشاشات الموبايل */
+@media (max-width: 600px) {
+    .love-text {
+        font-size: 1.5em;
+    }
+}
+
+    </style>
+</head>
+<body>
+  
+  <canvas id="pinkboard"></canvas>
+  <div class="love-text">Love</div>
+    <script src="pink_heart.js"></script>
+</body>
+</html>
